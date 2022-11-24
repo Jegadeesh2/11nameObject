@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11NameObject</title>
+  </head>
+  <body>
+    <!-- HTML -->
+
+    <h1 class="container" id="power"></h1>
+  </body>
+
+  <!-- CSS -->
+
+  <style>
+    body {
+      background-color: lightgray;
+    }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+
+  <!-- SCRIPT -->
+
+  <script>
+    //Element
+    let powerful = document.getElementById("power");
+    //Objects
+    const objectOne = {
+      name: "Ram",
+      power: 2500,
+      yuga: "Treta",
+    };
+    const objectTwo = {
+      name: "Krishna",
+      power: 2325,
+      yuga: "Dwapar",
+    };
+    //Function
+    let name = comparing(objectOne, objectTwo);
+    function comparing(objectOne, objectTwo) {
+      objectOne.power += objectOne.name.length * 35;
+      objectTwo.power += objectTwo.name.length * 35;
+      if (objectOne.power > objectTwo.power) {
+        powerful.innerText = `${objectOne.name}(${objectOne.power}) is powerful 
+        than ${objectTwo.name}(${objectTwo.power}).`;
+      } else {
+        powerful.innerText = `${objectTwo.name} (${objectTwo.power}) is powerful 
+        than ${objectOne.name}(${objectOne.power}).`;
+      }
+    }
+  </script>
+</html>
